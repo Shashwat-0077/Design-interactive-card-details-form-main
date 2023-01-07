@@ -1,0 +1,234 @@
+*,
+::after,
+::before {
+    box-sizing: border-box;
+}
+
+:root {
+    --light-greyish: hsl(270, 3%, 87%);
+    --dark-greyish: hsl(279, 6%, 55%);
+    --violet: hsl(278, 68%, 11%);
+    --font: "Space Grotesk", sans-serif;
+    --error: hsl(0, 100%, 66%);
+    --border: linear-gradient(hsl(249, 99%, 64%), hsl(278, 94%, 30%));
+}
+
+body {
+    margin: 0;
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    font-family: var(--font);
+}
+
+img {
+    pointer-events: none;
+}
+
+.d-flex {
+    display: flex;
+}
+
+/* -----------------background Image----------------------- */
+.background-img {
+    content: url("./images/bg-main-desktop.png");
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 101%;
+    width: 35%;
+    z-index: -10;
+}
+
+/* -----------------general----------------------- */
+.absolute {
+    position: absolute;
+}
+
+main.card-details {
+    max-width: 1200px;
+    width: 65%;
+    display: flex;
+    gap: 15%;
+    font-size: 1rem;
+}
+
+/* ---------------------Card------------------ */
+.my-card {
+    width: 100%;
+    color: white;
+    display: flex;
+    gap: 3em;
+    flex-direction: column;
+}
+
+/* Front */
+.my-card .front {
+    position: relative;
+}
+
+.circles {
+    width: 5em;
+}
+
+.my-card .front .inner-content {
+    top: 0;
+    left: 0;
+    position: absolute;
+    max-width: 27.9em;
+    width: 100%;
+    padding: 1.5em 1.5em 0;
+}
+.my-card .front > img {
+    max-width: 27.9em;
+    width: 100%;
+}
+
+.front .inner-content .text {
+    margin: 3.7em auto 0;
+}
+
+.card-number {
+    font-size: 2.25em;
+}
+
+.name-and-exp {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.7em;
+}
+
+/* Back */
+.my-card .back {
+    margin-left: auto;
+    position: relative;
+}
+
+.my-card .back > img {
+    max-width: 27.9em;
+    width: 100%;
+}
+
+.back .cvc-number {
+    top: 44%;
+    right: 12.5%;
+    position: absolute;
+}
+
+/* -----------------details------------------ */
+.details {
+    width: 70%;
+    display: grid;
+    place-items: center;
+}
+
+.my-container {
+    width: 100%;
+}
+
+.my-container label {
+    text-transform: uppercase;
+    color: var(--violet);
+    font-size: 0.9em;
+    font-weight: 500;
+    display: inline-block;
+    margin: 1.5em 0 0.5em 0;
+}
+
+/* Remove arrows from input type number  */
+.my-container input[type="number"]::-webkit-inner-spin-button,
+.my-container input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
+.my-container input {
+    width: 100%;
+    display: block;
+    border: 0.1em solid var(--light-greyish);
+    border-radius: 0.3em;
+    font-size: 1.125em;
+    padding: 0.6em 0 0.6em 0.7em;
+}
+
+.my-container input::placeholder {
+    color: var(--light-greyish);
+}
+
+.my-container input:focus {
+    border: 0.1em solid var(--violet);
+}
+
+.error-message {
+    display: none;
+    font-size: 0.75em;
+    margin: 0.3em 0 0 0;
+    color: red;
+}
+
+.exp-cvc {
+    gap: 5%;
+}
+
+.exp-inp {
+    width: 100%;
+}
+
+.exp-inp .d-flex {
+    gap: 5%;
+}
+
+.cvc {
+    width: 100%;
+}
+
+.submit-btn {
+    margin-top: 2em;
+    padding: 0.7em;
+    color: white;
+    font-size: 1.125em;
+    font-family: var(--font);
+    background-color: var(--violet);
+    border-radius: 0.312em;
+    border: 0;
+    width: 100%;
+    cursor: pointer;
+}
+
+/* -----------------Media Queries------------------ */
+
+@media (max-width: 1700px) {
+    main.card-details {
+        font-size: clamp(0.5rem, 0.93vw, 1rem);
+    }
+}
+
+@media (max-width: 690px) {
+    main.card-details {
+        font-size: clamp(0.4rem, 0.5rem, 0.7rem);
+        max-width: 352px;
+    }
+
+    .card-details {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .background-img {
+        width: 100%;
+        height: 37%;
+        content: url("./images/bg-main-mobile.png");
+    }
+
+    .my-card {
+        flex-direction: column-reverse;
+        gap: 0;
+    }
+
+    .front {
+        transform: translate(2.5em, -7em);
+        z-index: 2;
+    }
+}

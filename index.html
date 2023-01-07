@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- displays site properly based on user's device -->
+
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="./images/favicon-32x32.png"
+        />
+
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap"
+            rel="stylesheet"
+        />
+
+        <!-- My styles -->
+        <link rel="stylesheet" href="./styles.css" />
+        <!-- My scripts -->
+        <script src="./javascripts/validate.js" defer></script>
+        <script src="./javascripts/onchange.js" defer></script>
+
+        <title>Frontend Mentor | Interactive card details form</title>
+    </head>
+    <body>
+        <img class="background-img" alt="" />
+        <main class="card-details">
+            <div class="my-card">
+                <div class="front">
+                    <img src="./images/bg-card-front.png" alt="" />
+                    <div class="inner-content">
+                        <img
+                            src="./images/card-logo.svg"
+                            alt=""
+                            class="circles"
+                        />
+                        <div class="text">
+                            <div class="card-number">0000 0000 0000 0000</div>
+                            <div class="name-and-exp">
+                                <p class="name">Jane Appleseed</p>
+                                <p class="exp-date">
+                                    <span class="month">00</span>
+                                    /
+                                    <span class="year">00</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="back">
+                    <img src="./images/bg-card-back.png" alt="" />
+                    <div class="cvc-number">000</div>
+                </div>
+            </div>
+            <div class="details">
+                <div class="my-container">
+                    <form action="" novalidate>
+                        <label for="name">Cardholder Name</label>
+                        <input
+                            type="text"
+                            name="name"
+                            id="name"
+                            placeholder="e.g. Jane Appleseed"
+                            required
+                        />
+                        <p class="name error-message">Don't!</p>
+
+                        <label for="number-inp">Card Number</label>
+                        <input
+                            type="text"
+                            name="number-inp"
+                            id="number-inp"
+                            placeholder="e.g. 1234 5678 9123 0000"
+                            required
+                        />
+                        <p class="number-inp error-message">Don't!</p>
+
+                        <div class="d-flex exp-cvc">
+                            <div class="exp-inp">
+                                <label for="month">Exp. Date (MM/YY)</label>
+                                <div class="d-flex">
+                                    <input
+                                        type="number"
+                                        name="month"
+                                        id="month"
+                                        placeholder="MM"
+                                        min="1"
+                                        max="12"
+                                        required
+                                    />
+                                    <input
+                                        type="number"
+                                        name="year"
+                                        id="year"
+                                        placeholder="YY"
+                                        required
+                                    />
+                                </div>
+                                <p class="exp-inp error-message">Don't!</p>
+                            </div>
+                            <div class="cvc">
+                                <label for="cvc">CVC</label>
+                                <input
+                                    type="number"
+                                    name="cvc"
+                                    id="cvc"
+                                    placeholder="e.g. 123"
+                                    required
+                                />
+                                <p class="cvc error-message">Don't!</p>
+                            </div>
+                        </div>
+
+                        <button class="submit-btn">Confirm</button>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>
